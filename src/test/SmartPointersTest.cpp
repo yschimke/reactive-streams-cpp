@@ -7,8 +7,8 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
-#include "reactive-streams-cpp/Mocks.h"
-#include "reactive-streams-cpp/utilities/SmartPointers.h"
+#include "src/Mocks.h"
+#include "src/utilities/SmartPointers.h"
 
 using namespace ::testing;
 using namespace ::reactivestreams;

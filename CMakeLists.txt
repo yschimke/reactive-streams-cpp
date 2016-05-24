@@ -14,18 +14,10 @@ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -fsanitize=address")
 
 include_directories(${CMAKE_SOURCE_DIR})
 
-add_library(
-  Reactive-Streams
-  src/ReactiveStreams.h
-  src/utilities/AllowanceSemaphore.h
-  src/utilities/Ownership.h
-  src/utilities/SmartPointers.h
-  )
-
-target_link_libraries(
-  Reactive-Streams
-  glog
-  )
+add_library(Reactive-Streams INTERFACE)
+target_include_directories(Reactive-Streams INTERFACE
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+)
 
 add_subdirectory(external/googletest EXCLUDE_FROM_ALL)
 # EXCLUDE_FROM_ALL so 'make install' doesn't attempt installation of googletest
@@ -40,6 +32,7 @@ add_executable(
 
 target_link_libraries(
   tests
+  Reactive-Streams
   gtest
   gmock
   gmock_main
