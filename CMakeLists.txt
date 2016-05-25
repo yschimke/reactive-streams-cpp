@@ -39,7 +39,7 @@ target_link_libraries(
   glog
   )
 
-install (FILES include/ReactiveStreams.h DESTINATION include)
+install (FILES include/ReactiveStreams.h DESTINATION include/reactive-streams)
 ### TODO why doesn't the following work instead of above?
 #install (TARGETS Reactive-Streams DESTINATION include)
 

@@ -12,3 +12,25 @@ After first checkout, initialize and update submodules:
 # inside root ./reactivesocket-cpp
 git submodule init
 git submodule update --recursive
+```
+
+# Build & Install
+
+```
+cd reactive-socket-cpp
+mkdir build
+cd build
+cmake ..
+make
+make install
+```
+
+This will install in `/usr/local/include/reactive-streams/ReactiveStreams.h`
+
+# Usage
+
+Use via:
+
+```c++
+#include <reactive-streams/ReactiveStreams.h>
+```
